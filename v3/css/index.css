@@ -4,7 +4,18 @@ h2,
 h3,
 h4,
 h5,
-h6, 
+h6,
 {
   font-family: "Raleway", sans-serif;
+}
+
+.Navbar_Item
+{
+  transition: color 0.9s ease,
+              background-color 0.5s ease;
+}
+
+button:focus
+{
+  outline: 0;
 }
