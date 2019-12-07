@@ -1,0 +1,75 @@
+@keyframes fadeIn
+{
+  0%
+  {
+    opacity: 0;
+  }
+  25%
+  {
+    opacity: 0;
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  75%
+  {
+    opacity: 0.3;
+  }
+  80%
+  {
+    opacity: 0.5;
+  }
+  90%
+  {
+    opacity: 0.9;
+  }
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut
+{
+  0%
+  {
+    opacity: 1;
+  }
+  25%
+  {
+    opacity: 1;
+  }
+  50%
+  {
+    opacity: 1;
+  }
+  75%
+  {
+    opacity: 0.7;
+  }
+  80%
+  {
+    opacity: 0.5;
+  }
+  90%
+  {
+    opacity: 0.1;
+  }
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+body
+{
+  animation: fadeIn 1s;
+}
+
+.out
+{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}

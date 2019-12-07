@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body
+{
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
+}
+
+.chatbox_background
+{
+  width: 70vw;
+  margin-top: 90vh;
+  height: 9vh;
+  position: absolute;
+  scroll-behavior: smooth;
+}
+
+.chatbox_effects
+{
+  margin-left: 2.5vw;
+  width: 65vw;
+  margin-top: 0.5vh;
+  height: 4vh;
+  outline: none;
+  border: none;
+  /* background-color: #bdbdbd; */
+  border-radius: 10px;
+}
+
+.chatbox
+{
+  margin-left: 0.5vw;
+  width: 64.5vw;
+  height: 4vh;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3vh;
+}
+
+.chatpane
+{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  width: 70vw;
+  height: 90vh;
+  scroll-behavior: smooth;
+  word-wrap: break-word;
+}
+
+::-webkit-scrollbar 
+{
+  width: 0px;
+  background: transparent;
+}
+
+.time
+{
+  font-size: small;
+  color: gray;
+}
+
+.iframe
+{
+  border: 0;
+  position: absolute;
+  width: 30vw;
+  height: 100vh;
+  word-wrap: break-word;
+  margin-left: 70vw;
+}

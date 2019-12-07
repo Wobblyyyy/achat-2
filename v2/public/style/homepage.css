@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body
+{
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#mainPage
+{
+  position: absolute;
+  margin-left: 15vw;
+  width: 85vw;
+  margin-top: 7vh;
+  height: 93vh;
+}
+
+.chatwindow
+{
+  width: 85vw;
+  height: 93vh;
+}
+
+#navBar
+{
+  position: absolute;
+  width: 100vw;
+  height: 7vh;
+  background-color: magenta;
+}
+
+#sideBar
+{
+  position: absolute;
+  margin-top: 7vh;
+  width: 15vw;
+  height: 93vh;
+  background-color: blue;
+}
