@@ -4,18 +4,32 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6, 
 {
   font-family: "Raleway", sans-serif;
 }
 
-.Navbar_Item
+.v3-box
 {
-  transition: color 0.9s ease,
-              background-color 0.5s ease;
+  background-color: white;
+  transition: background-color 1000ms ease;
+  outline: 0;
 }
 
-button:focus
+.v3-box:focus
 {
+  background-color: grey;
   outline: 0;
+}
+
+@keyframes Disable 
+{
+  from { color: black; }
+  to { color: grey; }
+}
+
+.disabled
+{
+  animation: Disable 1000ms;
+  animation-fill-mode: forwards; 
 }
