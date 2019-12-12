@@ -14,7 +14,7 @@ var Alerts =
       text: message,
     });
   },
-  success: function ()
+  success: function (message)
   {
     Swal.fire(
     {

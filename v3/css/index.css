@@ -1,18 +1,22 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6, 
+html
 {
   font-family: "Raleway", sans-serif;
+}
+
+button
+{
+  outline: 0;
+}
+
+button:focus
+{
+  outline: 0;
 }
 
 .v3-box
 {
   background-color: white;
-  transition: background-color 1000ms ease;
+  transition: background-color 500ms ease;
   outline: 0;
 }
 
@@ -20,6 +24,11 @@ h6,
 {
   background-color: grey;
   outline: 0;
+}
+
+input:focus
+{
+  background-color: grey;
 }
 
 @keyframes Disable 
@@ -30,6 +39,37 @@ h6,
 
 .disabled
 {
-  animation: Disable 1000ms;
+  animation: Disable 500ms;
   animation-fill-mode: forwards; 
+}
+
+@keyframes Hide
+{
+  from { opacity: 1; display: initial; }
+  to { opacity: 0; display: none; }
+}
+
+.Section_Hide
+{
+  animation: Hide 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes Show
+{
+  from { opacity: 0; display: none; }
+  to { opacity: 1; display: initial; margin: 0; }
+}
+
+.Section_Show
+{
+  animation: Show 500ms;
+  animation-fill-mode: forwards;
+}
+
+.Section
+{
+  position: absolute;
+  margin-right: 10px;
+  padding-right: 10px;
 }

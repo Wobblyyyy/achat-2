@@ -1,0 +1,32 @@
+html,
+body
+{
+  padding: 0;
+  margin: 0;
+}
+
+.Section_Chat_ELEMENT
+{
+  position: absolute;
+}
+
+.Section_Chat_Topbar
+{
+  height: 7vh;
+  width: 100vw;
+  background-color: blue;
+}
+
+.Section_Chat_Sidebar
+{
+  margin-top: 7vh;
+  height: 93vh;
+  width: 15vw;
+  background-color: orange;
+}
+
+.Section_Chat_Button
+{
+  height: 7vh;
+  width: 10vw;
+}

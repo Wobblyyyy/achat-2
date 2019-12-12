@@ -18,16 +18,27 @@ for (let i = 0; i < selection.length; i++)
   });
 }
 
+function alreadySignedIn ()
+{
+  _("#Button_Login").addClass("disabled");
+  _("#Button_Login").removeClass("Navbar_Item_Left");
+  document.getElementById("Button_Login").href = "javascript:;";
+  _("#Button_Register").addClass("disabled");
+  _("#Button_Register").removeClass("Navbar_Item_Left");
+  document.getElementById("Button_Register").href = "javascript:;";
+  _("$sidebar").append('<a id="Button_About" href="logout.html" class="Navbar_Item Navbar_Item_Left w3-bar-item w3-button w3-padding fadeIn"><i class="fa fa-th-large fa-ban w3-margin-right"></i>sign out</a>');
+  _("$sidebar").append('<a id="Button_About" href="app/homepage.html" class="Navbar_Item Navbar_Item_Left w3-bar-item w3-button w3-padding fadeIn"><i class="fa fa-th-large fa-home w3-margin-right"></i>homepage</a>');
+}
+
 firebase.auth().onAuthStateChanged(function (user)
 {
   if (user)
   {
-    _("#Button_Login").addClass("disabled");
-    _("#Button_Login").removeClass("Navbar_Item_Left");
-    document.getElementById("Button_Login").href = "javascript:;";
-    _("#Button_Register").addClass("disabled");
-    _("#Button_Register").removeClass("Navbar_Item_Left");
-    document.getElementById("Button_Register").href = "javascript:;";
-    _("$sidebar").append('<a id="Button_About" href="index.html" class="Navbar_Item Navbar_Item_Left w3-bar-item w3-button w3-padding fadeIn"><i class="fa fa-th-large fa-ban w3-margin-right"></i>sign out</a>');
+    alreadySignedIn();
   }
 });
+
+if (Cookies.get("username").length > 0)
+{
+  alreadySignedIn();
+}
