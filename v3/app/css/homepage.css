@@ -30,3 +30,12 @@ body
   height: 7vh;
   width: 10vw;
 }
+
+.Section_Chat_ELEMENT_Fill,
+.Section_Chat-ELEMENT_Fill:focus
+{
+  height: inherit;
+  width: inherit;
+  outline: 0;
+  border: 0;
+}
