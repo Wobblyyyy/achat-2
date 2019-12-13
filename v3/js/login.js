@@ -32,7 +32,6 @@ function signIn ()
   {
     firebase.database().ref("email-to-name/" + Info.email + "/username").once("value", function (snapshot)
     {
-      assign ();
       Cookies.set("username", snapshot.val(), {expires: 365});
     });
     Alerts.success("logged in to account " + Info.originalemail);
