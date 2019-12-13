@@ -50,3 +50,11 @@ body
   transform: translate(0, -21vh);
   transition: transform 0.75s ease;
 }
+
+div.Section_Chat_Frame_Parent
+{
+  margin-top: 7vh;
+  margin-left: 15vw;
+  height: 93vh;
+  width: 85vw;
+}

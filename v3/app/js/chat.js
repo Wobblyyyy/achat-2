@@ -12,7 +12,7 @@ _("$Chat_Textbox").on("input", function ()
   {
     Chat.focus = "typing";
   }
-  else 
+  else
   {
     Chat.focus = "active";
   }
@@ -109,7 +109,7 @@ function uploadMessage (contents)
           firebase.database().ref("conversations/" + Chat.id + "/" + newNumber - 201).remove();
           break;
         }
-        default: 
+        default:
         {
           var a = 1;
           while (a !== 0)
@@ -120,7 +120,7 @@ function uploadMessage (contents)
       }
     });
   }
-  else 
+  else
   {
     return;
   }
@@ -222,13 +222,13 @@ window.addEventListener("unload", function ()
     });
     aTime.forEach(function (val, index)
     {
-      if (aTime[index] !== null) printMessage 
+      if (aTime[index] !== null) printMessage
       (
-        aMessage[index], 
+        aMessage[index],
         aTime[index],
-        aUsername[index], 
-        aColor[index], 
-        aUsertag[index], 
+        aUsername[index],
+        aColor[index],
+        aUsertag[index],
         index
       );
     });

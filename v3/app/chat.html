@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>a_ch_at</title>
@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       html,
-      body 
+      body
       {
         font-family: "Raleway", sans-serif;
         padding: 0;
         margin: 0;
+        overflow: hidden;
+      }
+      .time
+      {
+        font-size: small;
       }
       .v3fi
       {
@@ -27,7 +32,6 @@
         margin-left: 1vw;
         height: 93vh;
         width: 83vw;
-        background-color: blue;
         overflow-y: scroll;
         overflow-x: hidden;
         scroll-behavior: smooth;
@@ -39,14 +43,12 @@
         margin-left: 1vw;
         height: 7vh;
         width: 83vw;
-        background-color: yellow;
       }
-      #Chat_Online 
+      #Chat_Online
       {
         margin-left: 85vw;
         height: 100vh;
         width: 15vw;
-        background-color: magenta;
       }
       .Innerbox
       {
@@ -70,7 +72,7 @@
   </head>
   <body>
     <div id="Chat_Pane" class="v3fi v3p-abs">
-    </div> 
+    </div>
     <div id="Chat_Textbox" class="v3fi v3p-abs">
       <input sv="Chat_Textbox" placeholder="begin typing a message... or not..." class="v3fi v3p-abs Innerbox" type="text" autocomplete="off"></input>
     </div>
