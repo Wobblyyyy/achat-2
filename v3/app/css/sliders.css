@@ -1,0 +1,23 @@
+.Slider_Container
+{
+  height: 7vh;
+  width: 15vw;
+  background-color: white;
+}
+.Slider_Slider
+{
+  height: 7vh;
+  width: 7.5vw;
+  background-color: blue;
+  z-index: 100;
+}
+.Slider_Left
+{
+  transform: translate(0vw, 0vh);
+  transition: transform 0.75s ease;
+}
+.Slider_Right
+{
+  transform: translate(7.5vw, 0vh);
+  transition: transform 0.75s ease;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>achat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/anim.css">
+  </head>
+  <body class="w3-light-grey w3-content fadeIn" style="max-width:1600px">
+    <nav class="w3-sidebar w3-collapse w3-white" style="z-index: 3; width: 300px;" id="sidebar"></br>
+      <div class="w3-container">
+        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close">
+          <i class="fa fa-remove"></i>
+        </a>
+        <img src="logo.png" style="width:45%;" class="w3-round"><br><br>
+        <h4>
+          <strong>
+            a_ch_at
+          </strong>
+        </h4>
+        <p class="w3-text-grey">
+          page version 3.0-b
+        </p>
+      </div>
+      <div class="w3-bar-block" sv="sidebar">
+        <a id="Button_About" href="index.html" class="Navbar_Item Navbar_Item_Left w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-question-circle-o w3-margin-right"></i>about</a>
+        <a id="Button_Login" href="login.html" class="Navbar_Item Navbar_Item_Left w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-arrow-right w3-margin-right"></i>sign in</a>
+        <a id="Button_Register" href="register.html" class="Navbar_Item Navbar_Item_Left w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-user-plus w3-margin-right"></i>sign up</a>
+      </div>
+    </nav>
+    <div class="w3-main" style="margin-left: 300px;">
+      <header>
+        <div class="w3-container">
+          <h1>
+            <strong>
+              welcome to a_ch_at
+            </strong>
+          </h1>
+          <div class="w3-section w3-bottombar w3-padding-16">
+            <button class="Navbar_Item w3-button w3-padding Section_Button">about</button>
+            <button class="Navbar_Item w3-button w3-padding Section_Button">directive</button>
+            <button class="Navbar_Item w3-button w3-padding Section_Button">development</button>
+            <button class="Navbar_Item w3-button w3-padding Section_Button">more info</button>
+            <button class="Navbar_Item w3-button w3-padding Section_Button">privacy policy</button>
+          </div>
+          <div class="w3-section w3-padding-16">
+            <div sv="Section_About" class="Section">
+              <h1>about</h1>
+              <p>
+                a_ch_at is a browser-based chat service. users can create group chats, 
+                message other users in direct messages, chat on the global server,
+                play games with eachother, earn tokens by using the app to buy cool cosmetics, and more.
+                <h3><strong>group chats</strong></h3>
+                users can create group chats with other members, with no restrictions on how many users can be in the group.
+                every group features many of the same things everything else, including DMs has. you can still earn tokens 
+                to spend on <i>epic</i> stuff, and group messages are saved up to 100 messages back.
+                <h3><strong>direct messages</strong></h3>
+                direct messages are exactly what the name would suggest - a way to talk to one singular person. by default,
+                messages in a direct message log are saved up to 50 messages back, but that can be upgraded to 100 or even 200
+                with the use of tokens.
+                <h3><strong>tokens</strong></h3>
+                tokens are earned through very mysterious ways. you can pay other users tokens, use tokens to buy cosmetics, or
+                use tokens to upgrade whichever chats you'd like.
+                <h3><strong>shop</strong></h3>
+                a_ch_at's shop allows you to spend your hard-earned tokens on a variety of things. users can buy the ability to use
+                different name colors or chat colors in direct messaging groups.
+              </p>
+            </div>
+            <div sv="Section_Directive" class="Section_Hide Section">
+              <h1>directive</h1>
+              <p>
+                a_ch_at is designed to be a fast, free browser based chat solution with a variety of features 
+                just to make it a little bit less boring than your standard chat service. a_ch_at is written entirely in HTML, CSS, and JS
+                and is designed to work on Chromium based web browsers - if you're having difficulty you should switch to one of the following web browsers <br>
+                - Google Chrome <br>
+                - Opera <br>
+                - Vivaldi <br>
+                - Brave <br> 
+                - Microsoft Edge Beta (note that regular Microsoft Edge may not work)
+            </div>
+            <div sv="Section_Development" class="Section_Hide Section">
+              <h1>development</h1>
+              <p>
+                a_ch_at is not currently designed to be open source, although will convert to this model in the near future.
+                <h3><strong>javascript</strong></h3>
+                everything on the web client for a_ch_at is written in javascript. with the latest re-design, we've switched off from using jquery
+                to the much smaller and similar library score for the purpose of decreasing load time and bandwidth usage.
+                we also rely on several javascript libraries, such as <br>
+                - jscookie <br>
+                - sweetalert2 <br>
+                - firebase
+                <h3><strong>css (cascading style sheets)</strong></h3>
+                given i'm a DEVELOPER and not a designer, don't be suprised to learn that this looks
+                like complete shit. i'm always working to get better at all fields of web development, but for now,
+                we're all stuck with... whatever this is.
+                <h3><strong>html (hyper-text markup language)</strong></h3>
+                a_ch_at's html is designed to be lightweight to reduce bandwidth and client-side load time.
+                everything here was written for use on desktop based devices, including <br>
+                - chromebooks <br> 
+                - macbooks <br> 
+                - surface <br>
+                - windows desktops <br> 
+                - linux desktops and laptops <br>
+                - apple desktops <br>
+                it wasn't designed to work on smaller devices, so don't be suprised if it doesn't. a list of devices that won't work includes <br> 
+                - iphones / androids <br> 
+                - ipads / tablets <br> 
+                so if you're not using one of those, you're good to go. have fun!! yay!!
+                <h3><strong>want to help?</strong></h3>
+                if you have any experience with web development, or art design, or web design, feel free to contact me -
+                i can't say i wouldn't mind having some help. so long as you don't code like a retarded sloth, you should be good to go.
+              </p>
+            </div>
+            <div sv="Section_More" class="Section_Hide Section">
+              <h1>more info</h1>
+              <p>
+                some more info about your new favorite website...
+                <h3><strong>requirments</strong></h3>
+                a list of features a_ch_at needs to function. <br> 
+                - chromium based web browser <br> 
+                - javascript enabled (of course) <br> 
+                - cookies enabled (we depend on cookies to make our service work)
+                <h3><strong>extra</strong></h3>
+                <i>
+                  PMV - 3.0-b,
+                  PmV - 1
+                </i>
+            </div>
+            <div sv="Section_Privacy" class="Section_Hide Section">
+              <h1>privacy policy</h1>
+              <p>
+                we won't ever disclose any information stored on our servers to anybody, save law enforcement (not sure how we'd get to there but oh well),
+                and anything and everything stored on our servers is protected by AES256 (military grade) encryption. it's suggested 
+                that you don't put anything very valuable or sensitive on a_ch_at, and we are not responsible for any account-related issues - ie 
+                someone finds your password and you get hacked. you, as a user, are responsible for your own cyber security beyond your messages 
+                being automatically encrypted, and by using this service, accept full responsiblity for any user created content (including text messages)
+                that you submit while using this service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/about.js"></script>
+  </body>
+</html>
