@@ -31,7 +31,7 @@ input:focus
   background-color: grey;
 }
 
-@keyframes Disable 
+@keyframes Disable
 {
   from { color: black; }
   to { color: grey; }
@@ -40,7 +40,7 @@ input:focus
 .disabled
 {
   animation: Disable 500ms;
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;
 }
 
 @keyframes Hide

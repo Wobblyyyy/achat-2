@@ -9,28 +9,26 @@
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/v3.css">
     <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/sliders.css">
   </head>
   <body class="v3-font-Raleway">
     <div sv="Section_Chat">
       <div sv="Section_Chat_Topbar" class="Section_Chat_Topbar Section_Chat_ELEMENT">
-        <div class="Section_Chat_ELEMENT Section_Chat_Button">
-          <!--
-            TODO:
-            # Add v3fs-small v3fs-medium v3fs-large etc etc whatever 
-            # Add v3fs-r-small v3fs-r-medium v3fs-r-large and other relative font sizes
-            # Fix font sizes 
-            # Continue designing layout for homepage 
-            # Get to work on coding chat page 
-            # Get to work on coding home page 
-            -->
-          <button class="Section_Chat_ELEMENT_Fill v3-xOffset-90 v3fi">hey</button>
-        </div>
-        <div class="Section_Chat_ELEMENT Section_Chat_Button">
-        </div>
-        <div class="Section_Chat_ELEMENT Section_Chat_Button">
+        <span class="v3-abs v3fi v3fs-xxl v3-xOffset-5">
+          <strong>a_ch_at</strong>
+          <span class="v3fi v3fs-l">v3.0</span>
+        </span>
+        <div class="Section_Chat_ELEMENT Section_Chat_Button Dropdown">
+          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> sign out</button>
+          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-usd" aria-hidden="true"></i> shop</button>
+          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-cog" aria-hidden="true"></i> settings</button>
+          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-users" aria-hidden="true"></i> account</button>
         </div>
       </div>
       <div sv="Section_Chat_Sidebar" class="Section_Chat_Sidebar Section_Chat_ELEMENT">
+        <div class="Slider_Container">
+          <div class="Slider_Slider"></div>
+        </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

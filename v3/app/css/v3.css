@@ -6,11 +6,51 @@
 {
   font: inherit;
 }
+.v3fs-xs
+{
+  font-size: 8px;
+}
+.v3fs-s
+{
+  font-size: 12px;
+}
+.v3fs-ms
+{
+  font-size: 14px;
+}
+.v3fs-m
+{
+  font-size: 16px;
+}
+.v3fs-ml
+{
+  font-size: 22px;
+}
+.v3fs-l
+{
+  font-size: 36px;
+}
+.v3fs-xl
+{
+  font-size: 44px;
+}
+.v3fs-xxl
+{
+  font-size: 54px;
+}
+.v3fs-jumbo
+{
+  font-size: 64px;
+}
 .v3-font-Raleway
 {
   font-family: "Raleway", sans-serif;
 }
 
+.v3-xOffset-5
+{
+  margin-left: 5vw;
+}
 .v3-xOffset-10
 {
   margin-left: 10vw;
@@ -83,4 +123,36 @@
 .v3-yOffset-90
 {
   margin-top: 90vh;
+}
+
+.v3bg-white
+{
+  background-color: white;
+}
+.v3gb-gray,
+.v3gb-grey
+{
+  background-color: #c2c2c2;
+}
+
+.v3e-hover:hover
+{
+  background-color: #c2c2c2;
+}
+
+.v3a-bg
+{
+  transition: background-color 250ms;
+}
+
+.v3-fill
+{
+  height: inherit;
+  width: inherit;
+  outline: 0;
+  border: 0;
+}
+.v3-abs
+{
+  position: absolute;
 }

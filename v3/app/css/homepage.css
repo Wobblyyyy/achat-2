@@ -14,7 +14,6 @@ body
 {
   height: 7vh;
   width: 100vw;
-  background-color: blue;
 }
 
 .Section_Chat_Sidebar
@@ -38,4 +37,16 @@ body
   width: inherit;
   outline: 0;
   border: 0;
+}
+
+.Dropdown:hover
+{
+  transform: translate(0, 0);
+  transition: transform 0.75s ease;
+}
+
+.Dropdown
+{
+  transform: translate(0, -21vh);
+  transition: transform 0.75s ease;
 }
