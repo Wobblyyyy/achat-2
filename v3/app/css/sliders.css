@@ -2,14 +2,13 @@
 {
   height: 7vh;
   width: 15vw;
-  background-color: white;
 }
 .Slider_Slider
 {
   height: 7vh;
   width: 7.5vw;
-  background-color: blue;
   z-index: 100;
+  backdrop-filter: grayscale(1) blur(5px);
 }
 .Slider_Left
 {
@@ -20,4 +19,17 @@
 {
   transform: translate(7.5vw, 0vh);
   transition: transform 0.75s ease;
+}
+.Slider_Sub
+{
+  height: 7vh;
+  width: 7.5vw;
+  position: absolute;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+.teal
+{
+  color: teal;
 }

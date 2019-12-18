@@ -3,6 +3,8 @@ body
 {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .Section_Chat_ELEMENT
@@ -21,7 +23,6 @@ body
   margin-top: 7vh;
   height: 93vh;
   width: 15vw;
-  background-color: orange;
 }
 
 .Section_Chat_Button
@@ -51,10 +52,12 @@ body
   transition: transform 0.75s ease;
 }
 
-div.Section_Chat_Frame_Parent
+.mainframe
 {
   margin-top: 7vh;
   margin-left: 15vw;
   height: 93vh;
   width: 85vw;
+  outline: 0;
+  border: 0;
 }

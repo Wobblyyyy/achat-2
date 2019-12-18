@@ -14,23 +14,23 @@
   <body class="v3-font-Raleway">
     <div sv="Section_Chat">
       <div sv="Section_Chat_Topbar" class="Section_Chat_Topbar Section_Chat_ELEMENT">
-        <span class="v3-abs v3fi v3fs-xxl v3-xOffset-5">
-          <strong>a_ch_at</strong>
-          <span class="v3fi v3fs-l">v3.0</span>
-        </span>
         <div class="Section_Chat_ELEMENT Section_Chat_Button Dropdown">
-          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> sign out</button>
+          <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-users" aria-hidden="true"></i> users</button>
+          <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> leave</button>
+          <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-cog" aria-hidden="true"></i> options</button>
+          <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-users" aria-hidden="true"></i> groups</button>
+        </div>
+        <div class="Section_Chat_ELEMENT Section_Chat_Button Dropdown">
+          <button id="signout" class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> sign out</button>
           <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-usd" aria-hidden="true"></i> shop</button>
           <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-cog" aria-hidden="true"></i> settings</button>
-          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-users" aria-hidden="true"></i> account</button>
+          <button class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-user" aria-hidden="true"></i> account</button>
         </div>
       </div>
       <div sv="Section_Chat_Sidebar" class="Section_Chat_Sidebar Section_Chat_ELEMENT">
-        <div sv="SliderParent" class="Slider_Container">
-          <div sv="Slider" class="Slider_Slider Slider_Left"></div>
-        </div>
       </div>
-      <div sv="Append" style="position: absolute; width: 85vw; height: 93vh; margin-left: 15vw; margin-top: 7vh;">
+      <div sv="AppendHere">
+        <iframe class="mainframe" id="global" src="chat.html?c=hello"></iframe>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

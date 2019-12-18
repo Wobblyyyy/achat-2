@@ -152,7 +152,18 @@
   outline: 0;
   border: 0;
 }
+.v3-fill-w
+{
+  width: inherit;
+}
 .v3-abs
 {
   position: absolute;
+}
+.v3-btn
+{
+  width: 10vw;
+  height: 7vh;
+  border: 0;
+  outline: 0;
 }

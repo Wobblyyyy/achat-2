@@ -1,5 +1,5 @@
 var username = "", request = false, db = firebase.database().ref();
-var database = 
+var database =
 {
   users: db.child("users"),
   count: db.child("users/count"),
@@ -9,7 +9,6 @@ var database =
 
 function checkUsername ()
 {
-  // do this STUFF soon
   var regex = /^[A-Za-z0-9]+$/;
   if (!regex.test(_("$username").value()))
   {
@@ -36,7 +35,7 @@ function checkDatabase ()
     return;
   }
   if (request) return;
-  var Info = 
+  var Info =
   {
     username: _("$username").value(),
     email: _("$email").value().replaceAll("@", "AtSign").replaceAll(".", "PeriodSign"),
@@ -109,7 +108,7 @@ _("$username").on("keypress", function (e)
   }, 5)
 });
 
-var Inputs = 
+var Inputs =
 [
   "email",
   "password",

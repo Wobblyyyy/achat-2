@@ -26,7 +26,7 @@ var Alerts =
     {
       if (result.value)
       {
-        console.log("hey let's fucking get it");
+        window.location.href = "app/homepage.html";
       }
     });
   },
