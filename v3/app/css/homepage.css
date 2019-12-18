@@ -61,3 +61,26 @@ body
   outline: 0;
   border: 0;
 }
+
+.modal
+{
+  margin-left: 25vw;
+  margin-top: 25vh;
+  width: 50vw;
+  height: 50vh;
+  z-index: 500;
+  background-color: white;
+  position: absolute;
+  display: none;
+}
+
+.pagecover
+{
+  width: 100vw;
+  height: 100vh;
+  filter: blur(5px) grayscale(20%);
+  z-index: 499;
+  position: absolute;
+  transition: filter 0.5s;
+  display: none;
+}
