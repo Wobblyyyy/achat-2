@@ -71,16 +71,53 @@ body
   z-index: 500;
   background-color: white;
   position: absolute;
-  display: none;
 }
 
 .pagecover
 {
   width: 100vw;
   height: 100vh;
-  filter: blur(5px) grayscale(20%);
   z-index: 499;
   position: absolute;
   transition: filter 0.5s;
+}
+
+.cover
+{
+  filter: blur(5px) grayscale(20%);
+  transition: filter 0.5s;
+}
+
+.ModalVis
+{
+  display: block;
+  opacity: 1;
+  transition: opacity 0.75s;
+}
+
+.ModalHidden
+{
   display: none;
+  opacity: 0;
+  transition: opacity 0.75s;
+}
+
+.nbutton
+{
+  width: 15vw;
+  height: 5vh;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+
+.nbutton:focus
+{
+  outline: 0;
+  border: 0;
+}
+
+.sidebar
+{
+  background-color: #f0f0f0;
 }

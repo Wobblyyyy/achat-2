@@ -5,12 +5,24 @@ _("#signout").on("click", function ()
 
 function closeModal ()
 {
-  document.getElementById("modal").display = "none";
-  document.getElementById("pagecover").display = "none";
+  _("#pagecover").removeClass("cover");
+  _("#modal").setClass("modal ModalHidden");
 }
 
 function openModal ()
 {
-  document.getElementById("modal").display = "block";
-  document.getElementById("pagecover").display = "block";
+  _("#pagecover").addClass("cover");
+  _("#modal").setClass("modal ModalVis");
 }
+
+_("#pagecover").on("click", function ()
+{
+  closeModal();
+});
+
+/*
+_("#modalx").on("click", function ()
+{
+  closeModal();
+});
+*/
