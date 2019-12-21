@@ -104,11 +104,16 @@ body
 
 .nbutton
 {
-  width: 15vw;
+  width: 14.5vw;
   height: 5vh;
+  margin-left: 0.5vw;
   background-color: transparent;
   outline: 0;
   border: 0;
+  font-size: 2vh;
+  color: #999999;
+  font-style: italic;
+  text-align: left;
 }
 
 .nbutton:focus
@@ -117,7 +122,20 @@ body
   border: 0;
 }
 
+.activeselector
+{
+  color: black;
+  font-style: normal;
+}
+
 .sidebar
 {
   background-color: #f0f0f0;
+}
+
+.previewtext
+{
+  font-size: 1.5vh;
+  font-style: italic;
+  margin-top: 0.2vh;
 }
