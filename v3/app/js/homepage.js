@@ -19,10 +19,3 @@ _("#pagecover").on("click", function ()
 {
   closeModal();
 });
-
-/*
-_("#modalx").on("click", function ()
-{
-  closeModal();
-});
-*/
