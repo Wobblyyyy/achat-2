@@ -105,19 +105,26 @@ body
 .nbutton
 {
   width: 15vw;
-  height: 5vh;
+  height: 9vh;
   background-color: transparent;
   outline: 0;
   border: 0;
+  text-align: left;
+  font-size: large;
+}
+
+.nbutton.subtext
+{
+  font-size: small;
+}
+
+.nbutton.active
+{
+  background-color: #f0f0f0;
 }
 
 .nbutton:focus
 {
   outline: 0;
   border: 0;
-}
-
-.sidebar
-{
-  background-color: #f0f0f0;
 }
