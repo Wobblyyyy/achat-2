@@ -1,28 +1,60 @@
+var Modal =
+{
+  openModal: function (modalName)
+  {
+    setTimeout(function ()
+    {
+      _("#pagecover").addClass("cover");
+      _("#" + modalName).setClass("modal ModalVis");
+      Modal.activeModal = modalName;
+      Modal.modal = true;
+    }, 10);
+  },
+  closeModal: function (modalName)
+  {
+    _("#pagecover").removeClass("cover");
+    _("#" + modalName).setClass("modal ModalHidden");
+    Modal.modal = false;
+  },
+  activeModal: "",
+  modal: false,
+}
+
+var Sidebar =
+{
+  resetSidebar: function ()
+  {
+    _("$Section_Chat_Sidebar").html("");
+  },
+  addToSidebar: function (name, id)
+  {
+    _("$Section_Chat_Sidebar").append('<button class="nbutton active">global<p class="nbutton subtext">3 members</p></button>');
+  },
+}
+
+var Window =
+{
+  addWindow: function (id)
+  {
+    _("$AppendHere").append('<iframe class="mainframe" id="' + id + '" src="chat.html?c=' + id + '"></iframe>');
+  },
+  removeWindow: function (id)
+  {
+
+  },
+}
+
 _("#signout").on("click", function ()
 {
   window.location.href = "../logout.html";
 });
 
-function closeModal ()
-{
-  _("#pagecover").removeClass("cover");
-  _("#modal").setClass("modal ModalHidden");
-}
-
-function openModal ()
-{
-  _("#pagecover").addClass("cover");
-  _("#modal").setClass("modal ModalVis");
-}
-
 _("#pagecover").on("click", function ()
 {
-  closeModal();
+  if (Modal.modal) Modal.closeModal(Modal.activeModal);
 });
 
-/*
-_("#modalx").on("click", function ()
+_("$button_group_options").on("click", function ()
 {
-  closeModal();
+  Modal.openModal("group_options");
 });
-*/

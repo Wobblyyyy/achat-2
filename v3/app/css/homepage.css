@@ -5,6 +5,7 @@ body
   margin: 0;
   overflow-x: hidden;
   overflow-y: hidden;
+  user-select: none;
 }
 
 .Section_Chat_ELEMENT
@@ -71,6 +72,7 @@ body
   z-index: 500;
   background-color: white;
   position: absolute;
+  user-select: none;
 }
 
 .pagecover
