@@ -122,7 +122,7 @@ function uploadMessage (contents)
         break;
     }
     if (Timestamp[1].length == 1) Timestamp[1] = "0" + Timestamp[1];
-    if (Timestamp[0] > 12) { Timestamp[0] = Timestamp[0] - 12; Timestamp[1] += " pm" }
+    if (Timestamp[0] > 12) Timestamp[0] = Timestamp[0] - 12;
     Time = Timestamp[0] + ":" + Timestamp[1];
     Time = Timestamp[2] + " " + Timestamp[3] + ", " + Time;
     Username = Chat.username;
@@ -183,24 +183,28 @@ function uploadMessage (contents)
   }
 }
 
+/**
+ * TODO
+ * Finish implementing the display details functionality
+ * Make sure it works on all types of messages, whether new o rnot
+ */
+
 function printMessage (Message, Time, Username, Color, UserId, MessageCount)
 {
-  var RecTime = Date.now(), MessageB = Message;
+  var RecTime = Date.now();
   console.log(RecTime);
   if (Username !== Chat.lastUser)
   {
     _("#Chat_Pane").append('<div sv="' + MessageCount + '"></div>');
     _("$" + MessageCount).append('<h3 sv="u' + MessageCount +'">' + Username + '</h3>');
     _("$u" + MessageCount).append('<i class="time">      ' + Time + '</i>');
-    if (Message.includes("'")) MessageB = "see chat";
-    _("$" + MessageCount).append('<p onclick="displayDetails(\'' + MessageB + '\', \'' + Time + '\', \'' + Username + '\', \'' + Color + '\', \'' + UserId + '\', \'' + MessageCount + '\', ' + '\'' + RecTime + '\'' + ')" class="quickfade">' + Message + '</p>');
+    _("$" + MessageCount).append('<p onclick="displayDetails(\'' + Message + '\', \'' + Time + '\', \'' + Username + '\', \'' + Color + '\', \'' + UserId + '\', \'' + MessageCount + '\', ' + '\'' + RecTime + '\'' + ')" class="quickfade">' + Message + '</p>');
     Chat.last = MessageCount;
     Chat.lastUser = Username;
   }
   else
   {
-    if (Message.includes("'")) MessageB = "see chat";
-    _("$" + Chat.last).append('<p onclick="displayDetails(\'' + MessageB + '\', \'' + Time + '\', \'' + Username + '\', \'' + Color + '\', \'' + UserId + '\', \'' + MessageCount + '\', ' + '\'' + RecTime + '\'' + ')" class="quickfade">' + Message + '</p>');
+    _("$" + Chat.last).append('<p onclick="displayDetails(\'' + Message + '\', \'' + Time + '\', \'' + Username + '\', \'' + Color + '\', \'' + UserId + '\', \'' + MessageCount + '\', ' + '\'' + RecTime + '\'' + ')" class="quickfade">' + Message + '</p>');
   }
   document.getElementById("Chat_Pane").scrollTop = document.getElementById("Chat_Pane").scrollHeight;
 }
@@ -245,6 +249,7 @@ function printMessage (Message, Time, Username, Color, UserId, MessageCount)
 
 function displayDetails (Message, Time, Username, Color, UserId, MessageCount, RecTime)
 {
+  console.log(RecTime);
   if (Message.length > 100) Message = "see chat"
   swal.fire
   (
