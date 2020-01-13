@@ -28,21 +28,53 @@ var Sidebar =
   },
   addToSidebar: function (name, id)
   {
-    _("$Section_Chat_Sidebar").append('<button class="nbutton active">global<p class="nbutton subtext">3 members</p></button>');
+    _("$Section_Chat_Sidebar").append('<button class="nbutton" sv="button_' + id + '">' + name + '<p class="nbutton subtext">NULL members</p></button>');
   },
 }
 
 var Window =
 {
-  addWindow: function (id)
+  addWindow: function (name, id)
   {
-    _("$AppendHere").append('<iframe class="mainframe" id="' + id + '" src="chat.html?c=' + id + '"></iframe>');
+    _("$AppendHere").append('<iframe class="mainframe inview" id="' + id + '" src="chat.html?c=' + id + '"></iframe>');
   },
   removeWindow: function (id)
   {
-
+    _("#" + id).remove();
+  },
+  setActive: function (id)
+  {
+    _("#" + id).setClass("mainframe inview");
+  },
+  hide: function (id)
+  {
+    _("#" + id).setClass("mainframe hidden");
   },
 }
+
+firebase.database().ref("users/" + Cookies.get("username") + "/groups").on("value", function (snapshot)
+{
+  Sidebar.resetSidebar();
+  snapshot.forEach(function (child)
+  {
+    Sidebar.addToSidebar(child.val(), child.key);
+    Window.addWindow(child.val(), child.key);
+  });
+  snapshot.forEach(function (child)
+  {
+    _("$button_" + child.key).on("click", function ()
+    {
+      // TODO add code to handle clicking sidebar button.
+      Window.setActive(child.key);
+      var elements = document.getElementsByClassName("mainframe inview"), i;
+      for (i = 0, i < elements.length; i++;)
+      {
+        elements[i].classList.remove("inview");
+        elements[i].classList.add("hidden");
+      }
+    });
+  })
+});
 
 _("#signout").on("click", function ()
 {

@@ -130,3 +130,15 @@ body
   outline: 0;
   border: 0;
 }
+
+.mainframe.hidden
+{
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.mainframe.inview
+{
+  transition: opacity 0.5s;
+  opacity: 1;
+}
