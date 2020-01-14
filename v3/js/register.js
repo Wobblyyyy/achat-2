@@ -83,6 +83,10 @@ function createAccount (Info)
           id: snapshot.val() + 1,
           color: "black",
           tokens: 0,
+          groups:
+          {
+            global: "global",
+          },
         });
         Cookies.set("username", Info.username, { expires: 365 });
         setTimeout(function ()

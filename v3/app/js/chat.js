@@ -79,7 +79,7 @@ function uploadMessage (contents)
     [
       Time.getHours(),
       Time.getMinutes().toString(),
-      Time.getMonth(),
+      Time.getMonth() + 1,
       Time.getDate(),
     ];
     switch (Timestamp[2])

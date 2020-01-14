@@ -64,16 +64,15 @@ firebase.database().ref("users/" + Cookies.get("username") + "/groups").on("valu
   {
     _("$button_" + child.key).on("click", function ()
     {
-      // TODO add code to handle clicking sidebar button.
-      Window.setActive(child.key);
-      var elements = document.getElementsByClassName("mainframe inview"), i;
-      for (i = 0, i < elements.length; i++;)
+      var elements = document.getElementsByClassName("mainframe");
+      for (var i = 0; i < elements.length; i++)
       {
         elements[i].classList.remove("inview");
         elements[i].classList.add("hidden");
       }
+      Window.setActive(child.key);
     });
-  })
+  });
 });
 
 _("#signout").on("click", function ()
