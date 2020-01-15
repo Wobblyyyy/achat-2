@@ -7,7 +7,7 @@ _("$Chat_Textbox").on("keydown", function (key)
   {
     if (_("$Chat_Textbox").value().charAt(1) == "/")
     {
-
+      evaluateCommand(_("$Chat_Textbox").value());
     }
     else
     {
@@ -79,12 +79,20 @@ firebase.database().ref("conversations/" + Chat.id + "/count").on("value", funct
 var commands =
 [
   "/help",
-  "/mute",
-  "/unmute",
-  "/leave",
-  "/clear",
-  "/kick",
-  "/add",
+  "/help groups",
+  "/help chat",
+  "/help config",
+  "/config",
+  "/config alerts true",
+  "/config alerts false",
+  "/config pin true",
+  "/config pin false",
+  "/groups add",
+  "/groups remove",
+  "/groups leave",
+  "/chat mute",
+  "/chat unmute",
+  "/chat clear",
 ]
 
 function updateCommands ()
@@ -93,9 +101,9 @@ function updateCommands ()
   _("$commandguide").html("");
   commands.forEach(function (value, index)
   {
-    if (value.includes(_("$Chat_Textbox").value()))
+    if (value.includes(_("$Chat_Textbox").value().trim()))
     {
-      if (total < 3)
+      if (total < 4)
       {
         _("$commandguide").append("<p>" + value + "</p>");
       }
@@ -173,7 +181,8 @@ function uploadMessage (contents)
         break;
     }
     if (Timestamp[1].length == 1) Timestamp[1] = "0" + Timestamp[1];
-    if (Timestamp[0] > 12) Timestamp[0] = Timestamp[0] - 12;
+    if (Timestamp[0] > 12) { Timestamp[0] = Timestamp[0] - 12;  Timestamp[1] += " PM"}
+    else Timestamp[1] += " AM";
     Time = Timestamp[0] + ":" + Timestamp[1];
     Time = Timestamp[2] + " " + Timestamp[3] + ", " + Time;
     Username = Chat.username;
@@ -234,12 +243,6 @@ function uploadMessage (contents)
   }
 }
 
-/**
- * TODO
- * Finish implementing the display details functionality
- * Make sure it works on all types of messages, whether new o rnot
- */
-
 function printMessage (Message, Time, Username, Color, UserId, MessageCount)
 {
   var RecTime = Date.now();
@@ -249,13 +252,13 @@ function printMessage (Message, Time, Username, Color, UserId, MessageCount)
     _("#Chat_Pane").append('<div sv="' + MessageCount + '"></div>');
     _("$" + MessageCount).append('<h3 sv="u' + MessageCount +'">' + Username + '</h3>');
     _("$u" + MessageCount).append('<i class="time">      ' + Time + '</i>');
-    _("$" + MessageCount).append('<p onclick="displayDetails(\'' + Message + '\', \'' + Time + '\', \'' + Username + '\', \'' + Color + '\', \'' + UserId + '\', \'' + MessageCount + '\', ' + '\'' + RecTime + '\'' + ')" class="quickfade">' + Message + '</p>');
+    _("$" + MessageCount).append('<p class="quickfade">' + Message + '</p>');
     Chat.last = MessageCount;
     Chat.lastUser = Username;
   }
   else
   {
-    _("$" + Chat.last).append('<p onclick="displayDetails(\'' + Message + '\', \'' + Time + '\', \'' + Username + '\', \'' + Color + '\', \'' + UserId + '\', \'' + MessageCount + '\', ' + '\'' + RecTime + '\'' + ')" class="quickfade">' + Message + '</p>');
+    _("$" + Chat.last).append('<p class="quickfade">' + Message + '</p>');
   }
   document.getElementById("Chat_Pane").scrollTop = document.getElementById("Chat_Pane").scrollHeight;
 }
@@ -297,24 +300,3 @@ function printMessage (Message, Time, Username, Color, UserId, MessageCount)
     });
   });
 })();
-
-function displayDetails (Message, Time, Username, Color, UserId, MessageCount, RecTime)
-{
-  console.log(RecTime);
-  if (Message.length > 100) Message = "see chat"
-  swal.fire
-  (
-    "message details...",
-    "<b>contents: </b>" + Message + "<br>" +
-    "<b>timestamp: </b>" + Time + "<br>" +
-    "<b>username: </b>" + Username + "<br>" +
-    "<b>user's name color: </b>" + Color + "<br>" +
-    "<b>user's user-id: </b>" + UserId + "<br>" +
-    "<b>message origin number: </b>" + MessageCount + "<br>" +
-    "<b>time recieved: </b>" + RecTime,
-    "info",
-    {
-      button: "dismiss",
-    }
-  );
-}
