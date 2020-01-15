@@ -61,7 +61,7 @@
       }
       p
       {
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.5s ease;
       }
       .quickfade
@@ -79,10 +79,28 @@
         color: #999999;
         font-size: 6px;
       }
+      .commandguide
+      {
+        background-color: #FFFBFF;
+        position: absolute;
+        height: 15vh;
+        width: 83vw;
+        margin-top: 78vh;
+        margin-left: 1vw;
+        z-index: -100;
+        opacity: 0;
+      }
+      .vis
+      {
+        opacity: 1;
+        z-index: 10;
+      }
     </style>
   </head>
   <body>
     <div id="Chat_Pane" class="v3fi v3p-abs">
+    </div>
+    <div sv="commandguide" class="commandguide">
     </div>
     <div id="Chat_Textbox" class="v3fi v3p-abs">
       <input sv="Chat_Textbox" placeholder="begin typing a message... or not..." class="v3fi v3p-abs Innerbox" type="text" autocomplete="off"></input>

@@ -5,10 +5,23 @@ _("$Chat_Textbox").on("keydown", function (key)
   if (key.keyCode == "38") _("$Chat_Textbox").value(lastMessage);
   if (key.key === "Enter")
   {
-    uploadMessage(_("$Chat_Textbox").value());
+    if (_("$Chat_Textbox").value().charAt(1) == "/")
+    {
+
+    }
+    else
+    {
+      uploadMessage(_("$Chat_Textbox").value());
     _("$Chat_Textbox").value("");
+    }
   }
 });
+
+setInterval(function ()
+{
+  if (_("$Chat_Textbox").value().charAt(0) == "/") { updateCommands(); showCommands(); }
+  else hideCommands();
+}, 100);
 
 _("$Chat_Textbox").on("input", function ()
 {
@@ -62,6 +75,44 @@ firebase.database().ref("conversations/" + Chat.id + "/count").on("value", funct
     printMessage(Message, Time, Username, Color, Usertag, Count);
   });
 });
+
+var commands =
+[
+  "/help",
+  "/mute",
+  "/unmute",
+  "/leave",
+  "/clear",
+  "/kick",
+  "/add",
+]
+
+function updateCommands ()
+{
+  var total = 0;
+  _("$commandguide").html("");
+  commands.forEach(function (value, index)
+  {
+    if (value.includes(_("$Chat_Textbox").value()))
+    {
+      if (total < 3)
+      {
+        _("$commandguide").append("<p>" + value + "</p>");
+      }
+      total++;
+    }
+  });
+}
+
+function hideCommands ()
+{
+  _("$commandguide").removeClass("vis");
+}
+
+function showCommands ()
+{
+  _("$commandguide").addClass("vis");
+}
 
 function uploadMessage (contents)
 {

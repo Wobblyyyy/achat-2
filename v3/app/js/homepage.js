@@ -28,8 +28,12 @@ var Sidebar =
   },
   addToSidebar: function (name, id)
   {
-    _("$Section_Chat_Sidebar").append('<button class="nbutton" sv="button_' + id + '">' + name + '<p class="nbutton subtext">NULL members</p></button>');
+    _("$Section_Chat_Sidebar").append('<button class="nbutton v3a-bg" sv="button_' + id + '">' + name + '<p class="nbutton subtext">NULL members</p></button>');
   },
+  setActive: function (id)
+  {
+    _("$" + id).addClass("active");
+  }
 }
 
 var Window =
@@ -71,6 +75,12 @@ firebase.database().ref("users/" + Cookies.get("username") + "/groups").on("valu
         elements[i].classList.add("hidden");
       }
       Window.setActive(child.key);
+      elements = document.getElementsByClassName("nbutton");
+      for (var i = 0; i < elements.length; i++)
+      {
+        elements[i].classList.remove("active");
+      }
+      Sidebar.setActive("button_" + child.key);
     });
   });
 });
