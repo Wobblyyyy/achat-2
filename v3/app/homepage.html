@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/v3.css">
     <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/dark.css">
     <link rel="stylesheet" href="css/sliders.css">
   </head>
   <body class="v3-font-Raleway">
@@ -29,19 +30,34 @@
           <slidelabel unselectable="on">get alerts from this chat?</slidelabel>
         </div> <!-- Get alerts from group chat? -->
       </div>
+      <div id="group_create" class="modal ModalHidden">
+        <div>
+          <p>create a new group</p> <br>
+          <input sv="usersearch" type="text" class="textinput v3-font-Raleway v3fs-ml" placeholder="press enter to add">
+          <div sv="userfound" class="textinputsub"></div>
+          <div class="userlist" sv="userlist"></div>
+          <div class="off9">
+            <input sv="groupname" type="text" class="textinput v3-font-Raleway v3fs-ml" placeholder="group name..."> <br><br><br>
+            <button class="v3-fill v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" sv="resetgroup">reset</button> <br>
+            <button class="v3-fill v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" sv="creategroup">create</button>
+          </div>
+        </div>
+      </div>
       <div id="pagecover" class="pagecover">
         <div sv="Section_Chat_Topbar" class="Section_Chat_Topbar Section_Chat_ELEMENT">
+          <div style="opacity:0">
           <div class="Section_Chat_ELEMENT Section_Chat_Button Dropdown">
             <button class="v3-fill v3-xOffset-70 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-users" aria-hidden="true"></i> manage</button>
             <button class="v3-fill v3-xOffset-70 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-users" aria-hidden="true"></i> remove</button>
             <button class="v3-fill v3-xOffset-70 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-users" aria-hidden="true"></i> add</button>
             <button class="v3-fill v3-xOffset-70 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-users" aria-hidden="true"></i> friends</button>
           </div>
+          </div>
           <div class="Section_Chat_ELEMENT Section_Chat_Button Dropdown">
             <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-users" aria-hidden="true"></i> users</button>
-            <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> leave</button>
+            <button sv="leavegroup" class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> leave</button>
             <button sv="button_group_options" class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-cog" aria-hidden="true"></i> options</button>
-            <button class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-users" aria-hidden="true"></i> groups</button>
+            <button sv="button_group" class="v3-fill v3-xOffset-80 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" style="height: 7.11vh;"><i class="fa fa-users" aria-hidden="true"></i> groups</button>
           </div>
           <div class="Section_Chat_ELEMENT Section_Chat_Button Dropdown">
             <button id="signout" class="v3-fill v3-xOffset-90 v3fi v3fs-ml v3bg-white v3e-hover v3a-bg"><i class="fa fa-sign-out" aria-hidden="true"></i> sign out</button>

@@ -1,6 +1,34 @@
 html,
 body
 {
+    background-color: #3b3b3b !important;
+    opacity: 0.75;
+}
+
+.nbutton
+{
+    color: #e3e3e3 !important;
+}
+
+.nbutton.active
+{
+    background-color: #4a4a4a !important;
+}
+
+p
+{
+    color: #e3e3e3 !important;
+}
+
+.uname
+{
+    color: white;
+}
+
+/*
+html,
+body
+{
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -186,3 +214,4 @@ body
   position: absolute;
   margin-left: 40vw;
 }
+*/

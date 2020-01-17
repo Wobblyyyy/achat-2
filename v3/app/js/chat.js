@@ -1,7 +1,8 @@
-var lastMessage = "";
+var lastMessage = "", lksc;
 
 _("$Chat_Textbox").on("keydown", function (key)
 {
+  lksc++;
   if (key.keyCode == "38") _("$Chat_Textbox").value(lastMessage);
   if (key.key === "Enter")
   {
@@ -11,6 +12,8 @@ _("$Chat_Textbox").on("keydown", function (key)
     }
     else
     {
+      payoutTokens();
+      lksc = 0;
       uploadMessage(_("$Chat_Textbox").value());
     _("$Chat_Textbox").value("");
     }
@@ -245,12 +248,10 @@ function uploadMessage (contents)
 
 function printMessage (Message, Time, Username, Color, UserId, MessageCount)
 {
-  var RecTime = Date.now();
-  console.log(RecTime);
   if (Username !== Chat.lastUser)
   {
     _("#Chat_Pane").append('<div sv="' + MessageCount + '"></div>');
-    _("$" + MessageCount).append('<h3 sv="u' + MessageCount +'">' + Username + '</h3>');
+    _("$" + MessageCount).append('<h3 class="uname" sv="u' + MessageCount +'">' + Username + '</h3>');
     _("$u" + MessageCount).append('<i class="time">      ' + Time + '</i>');
     _("$" + MessageCount).append('<p class="quickfade">' + Message + '</p>');
     Chat.last = MessageCount;
@@ -300,3 +301,20 @@ function printMessage (Message, Time, Username, Color, UserId, MessageCount)
     });
   });
 })();
+
+function payoutTokens ()
+{
+  var len = 30
+  if (_("$Chat_Textbox").value().length < 30)
+  {
+    len = _("$Chat_Textbox").value().length;
+  }
+  len = (len * lksc * lksc * lksc * lksc) / 5;
+  if (len > 30) len = 31;
+  var random = Math.floor(Math.random() * 10);
+  len += random;
+  firebase.database().ref("users/" + Cookies.get("username") + "/tokens").once("value", function (snapshot)
+  {
+    firebase.database().ref("users/" + Cookies.get("username") + "/tokens").set(snapshot.val() + (len / 10));
+  });
+}
