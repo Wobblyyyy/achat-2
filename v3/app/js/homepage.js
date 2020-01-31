@@ -126,7 +126,7 @@ function printUserList ()
   {
     snapshot.forEach(function (child)
     {
-      if (child.key !== "count") userArray.push(child.key);
+      if (child.key !== "count" && !userArray.includes(child.key)) userArray.push(child.key);
     });
   });
 }
@@ -167,6 +167,18 @@ function drawGroupModal ()
       }
     }
   });
+  _("$groupname").on("keydown", function (key)
+  {
+    if (key.key === "Enter")
+    {
+      if (!addUserArray.includes(Cookies.get("username")))
+      {
+        addUserArray.push(Cookies.get("username"));
+      }
+      createGroup.createGroup();
+      closeGroupModal();
+    }
+  });
 }
 
 function dec2hex(r){return("0"+r.toString(16)).substr(-2)}function generateId(r){var n=new Uint8Array((r||40)/2);return window.crypto.getRandomValues(n),Array.from(n,dec2hex).join("")}
@@ -185,12 +197,16 @@ var createGroup =
   },
   createGroup: function ()
   {
-    var gid = generateId(30);
+    var gid = generateId(50);
     addUserArray.forEach(function (value)
     {
-      if (!value == "" && _("$groupname").value().length > 0)
+      if (!value == "" && _("$groupname").value().length > 0 && _("$groupname").value().length < 15)
       {
         firebase.database().ref("users/" + value + "/groups/" + gid).set(_("$groupname").value());
+      }
+      else
+      {
+        alert ("group name can't be empty or more than 15 characters");
       }
     });
   }

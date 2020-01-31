@@ -96,7 +96,7 @@ var commands =
   "/chat mute",
   "/chat unmute",
   "/chat clear",
-]
+];
 
 function updateCommands ()
 {
