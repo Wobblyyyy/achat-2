@@ -6,6 +6,7 @@ body
   overflow-x: hidden;
   overflow-y: hidden;
   user-select: none;
+  background-color: #E6EAEA;
 }
 
 .Section_Chat_ELEMENT
@@ -17,14 +18,33 @@ body
 {
   height: 7vh;
   width: 100vw;
+  background-color: #f5f5f5;
+}
+
+.Section_Chat_Topbar.User
+{
+  z-index: 5000;
+  width: 20vw;
+  height: 12vw;
+  background-color: #2c3e50;
 }
 
 .Section_Chat_Sidebar
 {
-  margin-top: 7vh;
-  height: 93vh;
+  margin-top: 12vh;
+  height: 88vh;
   width: 20vw;
   background-color: #2c3e50;
+}
+
+.Section_Chat_Sidebar_Stickybutton
+{
+  height: 5vh;
+  width: 9.9vw;
+  margin-top: 95vh;
+  margin-left: 0.1vw;
+  position: absolute;
+  background-color: #32465a;
 }
 
 .Section_Chat_Button
@@ -60,7 +80,7 @@ body
   margin-top: 7vh;
   margin-left: 20vw;
   height: 93vh;
-  width: 85vw;
+  width: 80vw;
   outline: 0;
   border: 0;
   position: absolute;
