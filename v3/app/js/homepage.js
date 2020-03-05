@@ -1,3 +1,5 @@
+var GroupMap = {}
+
 var Modal =
 {
   openModal: function (modalName)
@@ -30,16 +32,35 @@ var Sidebar =
 {
   resetSidebar: function ()
   {
-    _("$Section_Chat_Sidebar").html("");
+    _("$Section_Chat_Sidebar").html('<div class="v3p-abs" style="height: 7vh;"></div>');
   },
   addToSidebar: function (name, id)
   {
-    _("$Section_Chat_Sidebar").append('<button class="nbutton v3a-bg" sv="button_' + id + '">' + name + '<p class="nbutton subtext">group chat</p></button>');
+    _("$Section_Chat_Sidebar").append('<button class="nbutton v3a-bg" sv="button_' + id + '">' + name + '<p class="nbutton subtext" sv="nbutton_subtext_' + id + '">group chat</p></button>');
+    firebase.database().ref("conversations/" + id + "/count").on("value", function (snapshot)
+    {
+      firebase.database().ref("conversations/" + id + "/" + snapshot.val()).once("value", function (mini)
+      {
+        var s = mini.val().username + ": " + mini.val().message;
+        if (s.length > 50)
+        {
+          s = s.substring(0, 50);
+          s += "...";
+        }
+        _("$nbutton_subtext_" + id).html(s);
+      });
+    });
   },
   setActive: function (id)
   {
     _("$" + id).addClass("active");
   }
+}
+
+class Group
+{
+  name = "";
+  id = "";
 }
 
 var Window =
@@ -56,6 +77,7 @@ var Window =
   {
     _("#" + id).setClass("mainframe inview");
     Cookies.set("lastchat", id, { expires: 365, });
+    _("$ChatTitle").html(GroupMap[id])
   },
   hide: function (id)
   {
@@ -70,6 +92,7 @@ firebase.database().ref("users/" + Cookies.get("username") + "/groups").on("valu
   {
     Sidebar.addToSidebar(child.val(), child.key);
     Window.addWindow(child.val(), child.key);
+    GroupMap[child.key] = child.val();
   });
   snapshot.forEach(function (child)
   {
@@ -92,19 +115,9 @@ firebase.database().ref("users/" + Cookies.get("username") + "/groups").on("valu
   });
 });
 
-_("#signout").on("click", function ()
-{
-  window.location.href = "../logout.html";
-});
-
 _("#pagecover").on("click", function ()
 {
   if (Modal.modal) Modal.closeModal(Modal.activeModal);
-});
-
-_("$button_group_options").on("click", function ()
-{
-  Modal.openModal("group_options");
 });
 
 _("$button_group").on("click", function ()
@@ -114,9 +127,20 @@ _("$button_group").on("click", function ()
 
 setTimeout(function ()
 {
+  var elements = document.getElementsByClassName("mainframe");
+  for (var i = 0; i < elements.length; i++)
+  {
+    elements[i].classList.remove("inview");
+    elements[i].classList.add("hidden");
+  }
   Window.setActive(Cookies.get("lastchat"));
+  elements = document.getElementsByClassName("nbutton");
+  for (var i = 0; i < elements.length; i++)
+  {
+    elements[i].classList.remove("active");
+  }
   Sidebar.setActive("button_" + Cookies.get("lastchat"));
-}, 500);
+}, 2000);
 
 var userArray = [""], addUserArray = [];
 
@@ -231,12 +255,6 @@ _("$creategroup").on("click", function ()
   }
   createGroup.createGroup();
   closeGroupModal();
-});
-
-_("$leavegroup").on("click", function ()
-{
-  firebase.database().ref("users/" + Cookies.get("username") + "/groups/" + Cookies.get("lastchat")).remove();
-  Window.removeWindow(Cookies.get("lastchat"));
 });
 
  /**
