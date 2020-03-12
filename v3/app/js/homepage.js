@@ -260,3 +260,28 @@ _("$creategroup").on("click", function ()
  /**
   * SHAYS REBELLION POINTS TO THE FACT THAT THE ARTICLES OF CONFEDERATION ARE NOT WORKING AND WE NEED A STRONGER NATIONAL GOVERNMENT
   */
+
+firebase.database().ref("users/" + Cookies.get("username") + "/tokens").on("value", function (snapshot)
+{
+  var current = parseInt(_("$TokensCount").html());
+  var next = Math.floor(snapshot.val());
+  var distance = next - current;
+  var transitionTime = 500; // in ms
+  var timeSpace = Math.floor(transitionTime / distance);
+  var interval = setInterval(function ()
+  {
+    if (parseInt(_("$TokensCount").html()) == next)
+    {
+
+    }
+    else
+    {
+      _("$TokensCount").html(parseInt(_("$TokensCount").html()) + 1);
+    }
+  }, timeSpace);
+  setTimeout(function ()
+  {
+    _("$TokensCount").html(next);
+    clearInterval(interval);
+  }, transitionTime);
+});
