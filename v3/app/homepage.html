@@ -17,17 +17,80 @@
         <h1>features currently unavailable, coming soon!</h1>
       </div>
       <div id="group_create" class="modal ModalHidden">
-        <div>
-          <p>create a new group</p> <br>
-          <input sv="usersearch" type="text" class="textinput v3-font-Raleway v3fs-ml" placeholder="press enter to add">
-          <div sv="userfound" class="textinputsub"></div>
-          <div class="userlist" sv="userlist"></div>
-          <div class="off9">
-            <input sv="groupname" type="text" class="textinput v3-font-Raleway v3fs-ml" placeholder="group name..."> <br><br><br>
-            <button class="v3-fill v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" sv="resetgroup">reset</button> <br>
-            <button class="v3-fill v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" sv="creategroup">create</button>
-          </div>
-        </div>
+        <style>
+          td { border: 1px solid black; height: inherit; }
+          .scrollable { overflow-y: scroll; overflow-x: hidden; }
+        </style>
+        <table style="border: 1px solid black; width: 70vw; height: 70vh; margin-top: 2.5vh; margin-left: 2.5vw;">
+          <tr>
+            <th>add users</th>
+            <th>current users in group</th>
+            <th>group options</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="scrollable">
+                <input sv="usersearch" type="text" placeholder="press enter to add...">
+              </div>
+            </td>
+            <td rowspan="3">
+              <div class="scrollable">
+                <div sv="userlist"></div>
+              </div>
+            </td>
+            <td>
+              <div class="scrollable">
+                <input sv="groupname" type="text" placeholder="group's name...">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2">
+              <div class="scrollable" style="height: 50vh;">
+                <div sv="userfound" style="height: inherit;"></div>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="scrollable">
+                <button sv="resetgroup">reset</button>
+                <button sv="creategroup">create</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!--
+        <table style="width: 70vw; margin-left: 2.5vw; margin-top: 2.5vh;">
+          <tr>
+            <th>search for a user</th>
+            <th>current members</th>
+            <th>options</th>
+          </tr>
+          <tr>
+            <td>
+              <input sv="usersearch" type="text" class="textinput v3-font-Raleway v3fs-ml" placeholder="press enter to add">
+            </td>
+            <td>
+              <div class="userlist" sv="userlist"></div>
+            </td>
+            <td>
+              <input sv="groupname" type="text" class="textinput v3-font-Raleway v3fs-ml" placeholder="group name...">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div sv="userfound" class="textinputsub"></div>
+            </td>
+            <td></td>
+            <td>
+              <button class="v3-fill v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" sv="resetgroup">reset</button>
+              <button class="v3-fill v3fi v3fs-ml v3bg-white v3e-hover v3a-bg" sv="creategroup">create</button>
+            </td>
+          </tr>
+        </table>
+        -->
       </div>
       <div id="pagecover" class="pagecover">
         <div sv="Section_Chat_Topbar" class="Section_Chat_Topbar Section_Chat_ELEMENT">
